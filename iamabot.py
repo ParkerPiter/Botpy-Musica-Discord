@@ -106,6 +106,7 @@ class YTDLSource(discord.PCMVolumeTransformer):
         return filename
 #Aqui termina
 
+#Pone Play a la cancion
 @bot.command(name='play', help='To play song')
 async def play(ctx,url):
     try :
@@ -119,7 +120,7 @@ async def play(ctx,url):
     except:
         await ctx.send("The bot is not connected to a voice channel.")
 
-
+#Pausa la cancion
 @bot.command(name='pause', help='This command pauses the song')
 async def pause(ctx):
     voice_client = ctx.message.guild.voice_client
@@ -136,6 +137,7 @@ async def resume(ctx):
     else:
         await ctx.send("The bot was not playing anything before this. Use play_song command")
 
+#Pausa
 @bot.command(name='stop', help='Stops the song')
 async def stop(ctx):
     voice_client = ctx.message.guild.voice_client
